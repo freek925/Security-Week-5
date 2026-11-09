@@ -135,7 +135,7 @@ versleutelde berichten willen uitwisselen.
 Daarnaast is de beveiliging afhankelijk van de sterkte van het gekozen wachtwoord. Ondanks het gebruik van scrypt kunnen
 zwakke wachtwoorden nog steeds worden achterhaald door middel van wachtwoordaanvallen.
 
-### 6. Principe van Kerkhoffs
+## 6. Principe van Kerkhoffs
 
 Het Principe van Kerkhoffs stelt dat een cryptografisch systeem veilig moet blijven, zelfs wanneer de volledige werking
 ervan openbaar is. Alleen de geheime sleutel mag noodzakelijk zijn om de beveiliging te behouden.
