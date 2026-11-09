@@ -21,8 +21,26 @@ def encrypt_text(text: str, password: str) -> str:
     key = derive_key(password, salt)
 
     aes = AESGCM(key)
-    ciphertext = aes.encrypt(nonce, text.encode("utf-8"), None)
+    ciphertext = aes.encrypt(nonce, text.encode(), None)
 
     result = salt + nonce + ciphertext
 
     return base64.urlsafe_b64encode(result).decode("ascii")
+
+
+def decrypt_text(encrypted_text: str, password: str) -> str:
+    """
+    Takes a string `encrypted_test` and a string `password`, returns the decrypted text.
+    """
+    data = base64.b64decode(encrypted_text, altchars=b"-_", validate=True)
+
+    salt = data[:16]
+    nonce = data[16:28]
+    ciphertext = data[28:]
+
+    key = derive_key(password, salt)
+
+    aes = AESGCM(key)
+    plaintext = aes.decrypt(nonce, ciphertext, None)
+
+    return plaintext.decode()

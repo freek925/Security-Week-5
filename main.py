@@ -1,5 +1,8 @@
+import binascii
+
 from getpass import getpass
-from crypto import encrypt_text
+from crypto import encrypt_text, decrypt_text
+from cryptography.exceptions import InvalidTag
 
 def main():
     while True:
@@ -13,7 +16,7 @@ def main():
 
         if user_choice == "1":
             text = input("Enter text to encrypt: ")
-            # TODO: Figure out why getpass didn't work
+            # TODO 1: Figure out why getpass didn't work
             password = input("Enter password: ")
 
             if not password:
@@ -24,9 +27,18 @@ def main():
             print(f"\n Encrypted text: {encrypted}")
             continue
 
-        # TODO: refer to decryptor
         if user_choice == "2":
-            break
+            text = input("Enter text to decrypt: ")
+            # TODO: Implement getpass if TODO 1 is done
+            password = input("Enter password: ")
+
+            try:
+                decrypted = decrypt_text(text, password)
+                print(f"\nDecrypted text: {decrypted}")
+            except (InvalidTag, ValueError, binascii.Error):
+                print("Invalid password or encrypted data,")
+
+            continue
 
         if user_choice == "3":
             break
