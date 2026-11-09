@@ -1,12 +1,5 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+from getpass import getpass
+from crypto import encrypt_text
 
 def main():
     while True:
@@ -17,9 +10,19 @@ def main():
 
         user_choice = input("Choose an option: ")
 
-        # TODO: refer to encryptor
+
         if user_choice == "1":
-            break
+            text = input("Enter text to encrypt: ")
+            # TODO: Figure out why getpass didn't work
+            password = input("Enter password: ")
+
+            if not password:
+                print("Password cannot be empty.")
+                continue
+
+            encrypted = encrypt_text(text, password)
+            print(f"\n Encrypted text: {encrypted}")
+            continue
 
         # TODO: refer to decryptor
         if user_choice == "2":
@@ -31,6 +34,7 @@ def main():
         if user_choice not in ("1", "2"):
             print("Invalid option.")
             continue
+
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
