@@ -8,9 +8,32 @@ def print_hi(name):
     # Use a breakpoint in the code line below to debug your script.
     print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
 
+def main():
+    while True:
+        print("\n Text Encryptinator")
+        print("1. Encrypt text")
+        print("2. Decrypt text")
+        print("3. Exit")
+
+        user_choice = input("Choose an option: ")
+
+        # TODO: refer to encryptor
+        if user_choice == "1":
+            break
+
+        # TODO: refer to decryptor
+        if user_choice == "2":
+            break
+
+        if user_choice == "3":
+            break
+
+        if user_choice not in ("1", "2"):
+            print("Invalid option.")
+            continue
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
+    main()
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
