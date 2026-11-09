@@ -34,6 +34,9 @@ def decrypt_text(encrypted_text: str, password: str) -> str:
     """
     data = base64.b64decode(encrypted_text, altchars=b"-_", validate=True)
 
+    if len(data) < 44:
+        raise ValueError("Invalid encrypted data")
+
     salt = data[:16]
     nonce = data[16:28]
     ciphertext = data[28:]
