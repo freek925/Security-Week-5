@@ -4,6 +4,7 @@ from getpass import getpass
 from crypto import encrypt_text, decrypt_text
 from cryptography.exceptions import InvalidTag
 
+
 def main():
     while True:
         print("\n Text Encryptinator")
@@ -12,7 +13,6 @@ def main():
         print("3. Exit")
 
         user_choice = input("Choose an option: ")
-
 
         if user_choice == "1":
             text = input("Enter text to encrypt: ")
@@ -32,6 +32,7 @@ def main():
             # TODO: Implement getpass if TODO 1 is done
             password = input("Enter password: ")
 
+            # Handle exceptions for invalid password or encrypted data
             try:
                 decrypted = decrypt_text(text, password)
                 print(f"\nDecrypted text: {decrypted}")
@@ -48,8 +49,5 @@ def main():
             continue
 
 
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     main()
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
