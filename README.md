@@ -1,6 +1,13 @@
-# Security Week 5
+# Security Week 5: De Text Encryptinator
 
-# De Text Encryptinator
+## Inhoudsopgave
+
+- [1. Introductie](#1-introductie)
+- [2. Installatie en gebruik](#2-installatie-en-gebruik)
+- [3. Symmetrische en asymmetrische encryptie](#3-symmetrische-en-asymmetrische-encryptie)
+- [4. Implementatie en encryptiealgoritme](#4-implementatie-en-encryptiealgoritme)
+- [5. Sleutelbeheer](#5-sleutelbeheer)
+- [6. Kerckhoffs's Principe](#6-principe-van-kerkhoffs)
 
 ## 1. Introductie
 
